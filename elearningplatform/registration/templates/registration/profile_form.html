@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content%}
+
+<script>
+  function updateConfirm() {
+    alert("Profile updated successfully")
+  }
+</script>
+
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="row mt-4">
+            <div class="col-md-2 ">
+              {% if request.user.profile.avatar %}
+                <img src="{{request.user.profile.avatar.url}}" class="img-fluid">
+                <p class="mt-1">Delete avatar <input type="checkbox" id="avatar-clear" name="avatar-clear" /></p>
+              {% else %}
+                {% if profile.is_teacher %}
+                    <img src="{% static 'core/img/no-avatar-teacher.png' %}" class="img-fluid" >
+                {% else %}
+                    <img src="{% static 'core/img/no-avatar-student.png' %}" class="img-fluid">
+                {% endif %}
+              {% endif %}
+            </div>
+
+            <div class="col-md-10">
+              <h3 class="mb-4">{{request.user}}</h3>
+              <input type="file" name="avatar" class="form-control-file mb-3" id="id_avatar">
+              <input type="email" value={{request.user.email}} class="form-control mb-3" readonly>
+
+              {% if profile.is_teacher %}
+                {{ form.subjects }}
+                {{ form.students }}
+              {% endif %}
+              <a href="{% url 'password_change' %}" type="button" class="btn btn-color-profile float-end">Change password</a></p>
+              <input type="submit" class="btn btn-color" onclick="updateConfirm()" value="Update Profile">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

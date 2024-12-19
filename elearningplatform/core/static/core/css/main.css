@@ -1,0 +1,189 @@
+/* BASE */
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height:100vh;
+    padding-bottom: 30px;
+}
+
+.wrapper {
+    min-height: 90vh;
+    display: flex;
+}
+
+/* NAVBAR */
+
+.navbar-purple {
+    background-color: #7e1891;
+}
+
+.navbar-pink {
+    color:#ef476f;
+}
+.navbar-pink:hover {
+    color:#ef476f;
+    background-color:#f8ffe5;
+}
+
+.navbar-green {
+    color:#06d6a0;
+}
+
+.navbar-green:hover {
+    color:#06d6a0;
+    background-color:#f8ffe5;
+}
+
+.navbar-yellow {
+    color:#ffc43d;
+}
+
+.navbar-yellow:hover {
+    color: #ffc43d;
+}
+
+
+/* SIDEBAR */
+#sidebar {
+    background-color: #1b9aaa;
+    overflow: auto;
+    min-height: 100%;
+}
+
+.sidebar-text-color {
+    color:#f8ffe5;
+}
+
+.sidebar-text-color:hover {
+    color:#06d6a0;
+    background-color: #f8ffe5;
+}
+
+.sidebar-text-register {
+    color:#f8ffe5;
+}
+.sidebar-text-register:hover {
+    color:#06d6a0;
+    background-color: #f8ffe5;
+}
+
+/* LOGIN */
+.img-header {
+    padding:30px;
+    justify-content: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+/* HOME */
+.img-home{
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    magin-top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #7e1891;
+    color:#ffc43d;
+    padding: 15px;
+}
+
+/* BUTTONS */
+
+.btn-color {
+    background-color: #1b9aaa;
+    color:#ffc43d;
+}
+
+.btn-color:hover {
+    background-color: #ffc43d;
+    color:#f8ffe5;
+}
+
+.btn-delete {
+    background-color: #ffc43d;
+    color:#1b9aaa;
+}
+
+.btn-delete:hover {
+    background-color: #ffc43d;
+    color:#f8ffe5;
+}
+
+.btn-delete-item {
+    background-color: #f8ffe5;
+    color:#ef476f;
+}
+
+.btn-delete-item:hover {
+    background-color: #ef476f;
+    color:#f8ffe5;
+}
+
+.btn-color-profile {
+    background-color: #7e1891;
+    color:#f8ffe5;
+}
+
+.btn-color-profile:hover {
+    background-color: #1b9aaa;
+    color:#f8ffe5;
+}
+
+.title-text {
+    color:#1b9aaa;
+    text-decoration:none;
+}
+
+/* PROFILE */
+.img-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+
+/* SUBJECT */
+.img-highlight {
+    overflow: hidden;
+    height: 40vh;
+}
+
+.img-highlight img {
+    transition: all 0.5s ease;
+}
+
+.img-highlight:hover img {
+    transform: scale(1.05);
+}
+
+.list-group-item-action:hover {
+    color: #1b9aaa;
+}
+
+.text-card-color {
+    color: #1b9aaa;
+}
+
+/* PROFILE */
+.text-profile {
+    color:#7e1891;
+    text-decoration:none;
+}
+
+.pagination .page-link {
+    border: solid 1px #1b9aaa;
+    color: #1b9aaa;
+}
+.page-item.active .page-link{
+    background-color: #1b9aaa;
+    color: #f8ffe5;
+}

@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}New subject{% endblock %}
+{% block content%}
+
+<div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            <form action="" method="post">{% csrf_token %}
+                <h2 class="section-heading mb-4 title-text mt-5">Do you want to delete the subject "{{ object.name }}"?</h2>
+                <input type="submit" class="btn btn-lg btn-color" value="Yes" />
+                <a href="{% url 'subject' %}" class="btn btn-lg btn-delete">No </a>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

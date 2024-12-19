@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content%}
+
+<div class="container mb-4">
+    <div class="row mt-3">
+        <div class="col-md-9 mx-auto">
+            <div class="row mt-4">
+                <div class="col-md-2">
+                    {% if profile.avatar %}
+                        <img src="{{profile.avatar.url}}" class="img-fluid">
+                    {% else %}
+                    {% if profile.is_teacher %}
+                        <img src="{% static 'core/img/no-avatar-teacher.png' %}" class="img-fluid">
+                    {% else %}
+                        <img src="{% static 'core/img/no-avatar-student.png' %}" class="img-fluid">
+                    {% endif %}
+                    {% endif %}
+                    <p><a href="{% url 'profiles' %}" type="button" class="btn btn-color-profile mt-5"> Profiles </a></p>
+                </div>
+                <div class="col-md-10">
+                    <h2 class="mb-4 title-text"> {{profile.user}}</h2>
+                    <h4 class="text-profile">Subjects:</h4>
+                    {% for subject in profile.subjects.all %}
+                        <p>{{subject}}</p>
+                    {% endfor %}
+                    <p><a href="{% url 'student-update' profile.user.id %}" type="button" class="btn btn-color-profile mt-5 float-end"> Update Subjects</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
